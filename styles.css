@@ -165,9 +165,10 @@ button {
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   text-align: center;
   width: 100%;
+  min-width: 0;
 }
 
 .hello-pill {
@@ -186,6 +187,8 @@ button {
 .hello-text {
   font-weight: 600;
   color: var(--text-light-primary);
+  min-width: 0;
+  overflow-wrap: break-word;
 }
 
 .hello-cta {
@@ -194,6 +197,7 @@ button {
   text-decoration: underline;
   text-underline-offset: 3px;
   flex-shrink: 0;
+  white-space: nowrap;
 }
 
 /* Main Header (Logo Left, Hamburger Right) */
