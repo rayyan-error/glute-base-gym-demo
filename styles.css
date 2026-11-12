@@ -171,6 +171,7 @@ button {
 }
 
 .hello-pill {
+  display: none;
   background: var(--grad-glute);
   color: var(--charcoal-bg);
   font-weight: 800;
@@ -197,6 +198,7 @@ button {
 
 /* Main Header (Logo Left, Hamburger Right) */
 .site-header {
+  position: relative;
   background-color: rgba(17, 19, 24, 0.94);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
@@ -312,8 +314,8 @@ button {
 
 /* Navigation Menu (Mobile Drawer + Desktop Inline) */
 .site-nav {
-  position: fixed;
-  top: calc(var(--hellobar-h) + var(--header-h));
+  position: absolute;
+  top: 100%;
   left: 0;
   right: 0;
   background-color: var(--charcoal-surface);
@@ -1691,6 +1693,10 @@ button {
   :root {
     --gutter: 2rem;
     --header-h: 72px;
+  }
+
+  .hello-pill {
+    display: inline-block;
   }
 
   .hamburger-btn {
