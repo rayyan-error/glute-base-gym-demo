@@ -1,0 +1,536 @@
+/* ==========================================================================
+   GLUTE BASE GYM — MINIMAL DEMO LANDING PAGE
+   Design Rules:
+   - Mobile-First architecture
+   - Core Colors: Off-White & Charcoal / Off-Black (Strictly NO pure #FFF or #000)
+   - Accents: Neon Blue & Neon Pink
+   - Vibe: Spacious, clean, minimal neon (no e-commerce elements)
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   CSS Variables & Design Tokens
+   -------------------------------------------------------------------------- */
+:root {
+  /* Charcoal / Off-Black Palette (No pure #000000) */
+  --bg-page: #0d1015;
+  --bg-surface: #141820;
+  --bg-surface-elevated: #1a202c;
+  --bg-header: rgba(13, 16, 21, 0.82);
+
+  /* Off-White Palette (No pure #FFFFFF) */
+  --text-primary: #f2f4f8;
+  --text-secondary: #9da6b7;
+  --text-muted: #687387;
+
+  /* Neon Accent System */
+  --accent-blue: #00d2ff;
+  --accent-pink: #ff2a85;
+  --accent-blue-soft: rgba(0, 210, 255, 0.14);
+  --accent-pink-soft: rgba(255, 42, 133, 0.14);
+  --accent-gradient: linear-gradient(135deg, #00d2ff 0%, #ff2a85 100%);
+  --neon-border-blue: rgba(0, 210, 255, 0.35);
+
+  /* Borders & Dividers */
+  --border-subtle: rgba(242, 244, 248, 0.08);
+  --border-focus: rgba(0, 210, 255, 0.5);
+
+  /* WhatsApp Brand Color (tuned for dark theme) */
+  --color-whatsapp: #25d366;
+  --color-whatsapp-glow: rgba(37, 211, 102, 0.32);
+
+  /* Typography */
+  --font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+
+  /* Spacing (Mobile-First) */
+  --header-height: 64px;
+  --container-padding: 1.25rem;
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-full: 9999px;
+
+  /* Transitions */
+  --transition-smooth: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* --------------------------------------------------------------------------
+   Reset & Base Styles
+   -------------------------------------------------------------------------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
+  background-color: var(--bg-page);
+}
+
+body {
+  font-family: var(--font-family);
+  background-color: var(--bg-page);
+  color: var(--text-primary);
+  line-height: 1.5;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* --------------------------------------------------------------------------
+   Ambient Neon Glows (Subtle, Spacious, High-Tech Vibe)
+   -------------------------------------------------------------------------- */
+.ambient-glow {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(90px);
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.45;
+}
+
+.glow-blue {
+  width: 260px;
+  height: 260px;
+  top: 10%;
+  right: -60px;
+  background: radial-gradient(circle, var(--accent-blue) 0%, transparent 70%);
+}
+
+.glow-pink {
+  width: 240px;
+  height: 240px;
+  top: 45%;
+  left: -50px;
+  background: radial-gradient(circle, var(--accent-pink) 0%, transparent 70%);
+}
+
+@media (min-width: 768px) {
+  .glow-blue {
+    width: 480px;
+    height: 480px;
+    top: 5%;
+    right: 5%;
+    opacity: 0.35;
+    filter: blur(120px);
+  }
+  .glow-pink {
+    width: 440px;
+    height: 440px;
+    top: 35%;
+    left: 5%;
+    opacity: 0.3;
+    filter: blur(120px);
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Sticky Header
+   -------------------------------------------------------------------------- */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  width: 100%;
+  height: var(--header-height);
+  background-color: var(--bg-header);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border-subtle);
+  transition: border-color 0.2s ease;
+}
+
+.header-container {
+  max-width: 1120px;
+  height: 100%;
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Simple Text Logo */
+.logo-link {
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 0;
+}
+
+.logo-text {
+  font-size: 1.25rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: var(--text-primary);
+  text-transform: tracking-tight;
+}
+
+.logo-accent-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: var(--accent-pink);
+  box-shadow: 0 0 10px var(--accent-pink);
+  display: inline-block;
+}
+
+/* Header Status Pill */
+.header-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: rgba(20, 24, 32, 0.7);
+  border: 1px solid var(--border-subtle);
+  padding: 6px 12px;
+  border-radius: var(--radius-full);
+}
+
+.status-pulse {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--accent-blue);
+  box-shadow: 0 0 8px var(--accent-blue);
+  position: relative;
+}
+
+.status-pulse::after {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  border-radius: 50%;
+  border: 1.5px solid var(--accent-blue);
+  animation: pulse-ring 2s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+}
+
+@keyframes pulse-ring {
+  0% { transform: scale(0.9); opacity: 0.9; }
+  70% { transform: scale(2.2); opacity: 0; }
+  100% { transform: scale(2.2); opacity: 0; }
+}
+
+.status-label {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  letter-spacing: 0.01em;
+}
+
+/* --------------------------------------------------------------------------
+   Hero Section (Charcoal Background, Spacious & Minimal)
+   -------------------------------------------------------------------------- */
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 1;
+}
+
+.hero-section {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem var(--container-padding) 4rem;
+}
+
+.hero-container {
+  width: 100%;
+  max-width: 680px;
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Top Badge */
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: var(--bg-surface);
+  border: 1px solid rgba(0, 210, 255, 0.25);
+  box-shadow: 0 2px 16px rgba(0, 210, 255, 0.08);
+  padding: 6px 14px;
+  border-radius: var(--radius-full);
+  margin-bottom: 1.5rem;
+}
+
+.badge-icon {
+  font-size: 0.85rem;
+}
+
+.badge-text {
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--accent-blue);
+  text-transform: uppercase;
+}
+
+/* Main Headlines */
+.hero-headline {
+  font-size: 2rem;
+  line-height: 1.2;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  color: var(--text-primary);
+  margin-bottom: 1.25rem;
+}
+
+.neon-text-gradient {
+  background: var(--accent-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+  padding-bottom: 4px;
+  text-shadow: 0 0 30px rgba(0, 210, 255, 0.3);
+}
+
+.hero-subheadline {
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  font-weight: 400;
+  color: var(--text-secondary);
+  max-width: 480px;
+  margin: 0 auto 2.25rem;
+}
+
+/* Minimal Info Card (Transparent Charcoal) */
+.hero-info-card {
+  width: 100%;
+  max-width: 440px;
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  gap: 0.875rem;
+}
+
+.info-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-align: left;
+  font-size: 0.875rem;
+}
+
+.info-label {
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.info-value {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.info-divider {
+  width: 100%;
+  height: 1px;
+  background-color: var(--border-subtle);
+}
+
+/* Primary Hero CTA */
+.hero-cta-wrapper {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background-color: var(--bg-surface-elevated);
+  color: var(--text-primary);
+  font-family: inherit;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 0.875rem 1.75rem;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--neon-border-blue);
+  box-shadow: 0 4px 20px rgba(0, 210, 255, 0.16);
+  transition: var(--transition-smooth);
+  width: 100%;
+  max-width: 320px;
+  min-height: 48px;
+}
+
+.btn-primary:hover,
+.btn-primary:focus-visible {
+  background: var(--accent-gradient);
+  border-color: transparent;
+  color: #0c0e13;
+  box-shadow: 0 6px 28px rgba(255, 42, 133, 0.35);
+  transform: translateY(-2px);
+  outline: none;
+}
+
+.btn-arrow {
+  transition: transform 0.2s ease;
+}
+
+.btn-primary:hover .btn-arrow {
+  transform: translateX(3px);
+}
+
+/* --------------------------------------------------------------------------
+   Minimal Footer
+   -------------------------------------------------------------------------- */
+.site-footer {
+  border-top: 1px solid var(--border-subtle);
+  padding: 1.5rem var(--container-padding);
+  text-align: center;
+  background-color: var(--bg-page);
+  position: relative;
+  z-index: 1;
+}
+
+.footer-copy {
+  font-size: 0.8125rem;
+  color: var(--text-muted);
+}
+
+/* --------------------------------------------------------------------------
+   Persistent Floating WhatsApp Chat Widget (Bottom Right)
+   - Mobile-First & Safe-Area Aware
+   - Non-intrusive minimal neon aesthetic
+   -------------------------------------------------------------------------- */
+.whatsapp-widget-container {
+  position: fixed;
+  bottom: max(20px, calc(env(safe-area-inset-bottom) + 16px));
+  right: max(20px, calc(env(safe-area-inset-right) + 16px));
+  z-index: 999;
+}
+
+.whatsapp-floating-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #2fe675 0%, #1da851 100%);
+  color: #0c120f;
+  text-decoration: none;
+  box-shadow: 0 6px 24px rgba(37, 211, 102, 0.4), 0 0 12px rgba(0, 210, 255, 0.2);
+  position: relative;
+  transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.25s ease;
+  outline: none;
+}
+
+.whatsapp-floating-btn:hover,
+.whatsapp-floating-btn:focus-visible {
+  transform: scale(1.08) translateY(-2px);
+  box-shadow: 0 10px 32px rgba(37, 211, 102, 0.6), 0 0 18px rgba(0, 210, 255, 0.4);
+}
+
+.whatsapp-floating-btn:active {
+  transform: scale(0.96);
+}
+
+/* WhatsApp Icon */
+.whatsapp-icon {
+  width: 30px;
+  height: 30px;
+}
+
+/* Ping Ring around widget */
+.whatsapp-ping {
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  right: -4px;
+  bottom: -4px;
+  border-radius: 50%;
+  border: 2px solid rgba(37, 211, 102, 0.6);
+  pointer-events: none;
+  animation: ping-wave 3s infinite;
+}
+
+@keyframes ping-wave {
+  0% { transform: scale(0.95); opacity: 0.8; }
+  60% { transform: scale(1.4); opacity: 0; }
+  100% { transform: scale(1.4); opacity: 0; }
+}
+
+/* Tooltip (visible on hover / desktop, hidden on tiny screen unless hovered) */
+.whatsapp-tooltip {
+  position: absolute;
+  right: 68px;
+  background-color: var(--bg-surface-elevated);
+  color: var(--text-primary);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  padding: 6px 12px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-subtle);
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  transform: translateX(8px);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+}
+
+.whatsapp-floating-btn:hover .whatsapp-tooltip,
+.whatsapp-floating-btn:focus-visible .whatsapp-tooltip {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* --------------------------------------------------------------------------
+   Responsive Enhancements (Scaling up from Mobile-First)
+   -------------------------------------------------------------------------- */
+@media (min-width: 640px) {
+  :root {
+    --header-height: 72px;
+    --container-padding: 2rem;
+  }
+
+  .hero-headline {
+    font-size: 2.75rem;
+    letter-spacing: -0.04em;
+  }
+
+  .hero-subheadline {
+    font-size: 1.2rem;
+  }
+
+  .btn-primary {
+    width: auto;
+    min-width: 260px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero-section {
+    padding: 5rem var(--container-padding) 6rem;
+  }
+
+  .hero-headline {
+    font-size: 3.25rem;
+  }
+}
