@@ -2,113 +2,398 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <meta name="theme-color" content="#0e1117">
-  <title>Glute Base Gym — Official Website Coming Soon</title>
-  <meta name="description" content="Glute Base Gym - Official Website Coming Soon. We are upgrading our digital experience.">
-  
-  <!-- Modern Clean Typography -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Glute Base Gym &amp; Fuel Base Nutrition Kitchen | SG Palya, Bengaluru</title>
+  <meta name="description" content="Glute Base Gym & Fitness Centre and Fuel Base Nutrition Kitchen at 158, 4th Cross Road, Venkateshwara Layout, SG Palya, Bengaluru 560029. Founded by Head Coach Dhana.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  
-  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <!-- Ambient Neon Background Highlights (Clean & Minimal) -->
-  <div class="ambient-glow glow-blue" aria-hidden="true"></div>
-  <div class="ambient-glow glow-pink" aria-hidden="true"></div>
 
-  <!-- Sticky Header -->
-  <header class="site-header" id="header">
-    <div class="header-container">
-      <a href="#" class="logo-link" aria-label="Glute Base Gym Home">
-        <span class="logo-text">Glute Base</span>
-        <span class="logo-accent-dot" aria-hidden="true"></span>
+  <!-- TOP STACKING ORDER: 1. STICKY HELLO BAR (ANCHORED TO ANNOUNCEMENTS) + 2. MAIN HEADER -->
+  <div class="top-stack-wrapper">
+    <div class="hello-bar" role="region" aria-label="Latest Announcement Bar">
+      <a href="#announcements" class="hello-bar-link">
+        <span class="hello-pill">Notice Board</span>
+        <span class="hello-text">[PLACEHOLDER: Sticky Hello Bar Active Announcement Headline]</span>
+        <span class="hello-cta">View Notice ↓</span>
       </a>
-      <div class="header-status" aria-label="Status: Upgrading">
-        <span class="status-pulse" aria-hidden="true"></span>
-        <span class="status-label">Upgrade in progress</span>
-      </div>
     </div>
-  </header>
 
-  <!-- Main Content -->
-  <main class="main-content">
-    <section class="hero-section">
-      <div class="hero-container">
-        
-        <!-- Minimal Badge -->
-        <div class="hero-badge">
-          <span class="badge-icon">⚡</span>
-          <span class="badge-text">Next-Gen Fitness Experience</span>
-        </div>
-
-        <!-- Required Headline & Subheadline -->
-        <h1 class="hero-headline">
-          Glute Base Gym <br>
-          <span class="neon-text-gradient">Official Website Coming Soon</span>
-        </h1>
-
-        <p class="hero-subheadline">
-          We are upgrading our digital experience.
-        </p>
-
-        <!-- Minimal Highlights / Reassurance (No e-commerce) -->
-        <div class="hero-info-card">
-          <div class="info-row">
-            <span class="info-label">Inquiries & Admissions</span>
-            <span class="info-value">Open on WhatsApp</span>
+    <header class="site-header">
+      <div class="container header-inner">
+        <!-- Header Logo: Storefront Signage Split Pink/Blue Semi-Circle Placeholder -->
+        <a href="index.html" class="brand-logo" aria-label="Glute Base and Fuel Base Home">
+          <div class="logo-semicircle-mark" aria-hidden="true" title="[PLACEHOLDER: Storefront Signage Split Pink/Blue Semi-Circle Logo]">
+            <span class="semi-half semi-pink"></span>
+            <span class="semi-half semi-blue"></span>
           </div>
-          <div class="info-divider" aria-hidden="true"></div>
-          <div class="info-row">
-            <span class="info-label">Current Facility</span>
-            <span class="info-value">Operating as scheduled</span>
+          <div class="brand-logo-text">
+            <span class="brand-logo-title">GLUTE BASE &times; FUEL BASE</span>
+            <span class="brand-logo-sub">[PLACEHOLDER: Storefront Logo Asset]</span>
+          </div>
+        </a>
+
+        <!-- Mobile Hamburger Button (Right) -->
+        <button type="button" class="hamburger-btn" id="hamburger-btn" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="site-nav">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
+
+        <!-- 5-Page Navigation -->
+        <nav class="site-nav" id="site-nav" aria-label="Primary Navigation">
+          <ul class="nav-list">
+            <li><a href="index.html" class="nav-link active">Home</a></li>
+            <li><a href="menu.html" class="nav-link nav-link-fuel">Fuel Base Menu</a></li>
+            <li><a href="gallery.html" class="nav-link">Dual Gallery</a></li>
+            <li><a href="pricing.html" class="nav-link">Memberships</a></li>
+            <li><a href="contact.html" class="nav-link">Location &amp; Connect</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+  </div>
+
+  <main>
+    <!-- ======================================================================
+         1. HERO SECTION (SCOPED DUAL-BRAND PILL TOGGLE WITH BLUR DISSOLVE)
+         Scope Rule: Toggle ONLY updates #hero-brand-scope
+         ====================================================================== -->
+    <section class="hero-section brand-scope-zone theme-glute" id="hero-brand-scope">
+      <div class="container">
+        <!-- iOS-Style Dual-Brand Pill Switch -->
+        <div class="brand-toggle-bar">
+          <span class="brand-toggle-caption">Switch Experience</span>
+          <div class="ios-pill-switch" data-brand-switch="hero-brand-scope" role="tablist" aria-label="Switch between Glute Base Gym and Fuel Base Nutrition Kitchen">
+            <button type="button" class="pill-option is-active" data-brand="glute" role="tab" aria-selected="true" id="hero-tab-glute">
+              <span class="brand-dot dot-glute"></span>
+              <span>Glute Base Gym</span>
+            </button>
+            <button type="button" class="pill-option" data-brand="fuel" role="tab" aria-selected="false" id="hero-tab-fuel">
+              <span class="brand-dot dot-fuel"></span>
+              <span>Fuel Base Kitchen</span>
+            </button>
           </div>
         </div>
 
-        <!-- Direct CTA -->
-        <div class="hero-cta-wrapper">
-          <a href="https://wa.me/?text=Hi%20Glute%20Base%20Gym%2C%20I%20would%20like%20to%20know%20more%20about%20memberships." 
-             target="_blank" 
-             rel="noopener noreferrer" 
-             class="btn-primary">
-            <span>Connect on WhatsApp</span>
-            <svg class="btn-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <line x1="5" y1="12" x2="19" y2="12"></line>
-              <polyline points="12 5 19 12 12 19"></polyline>
-            </svg>
-          </a>
+        <!-- Blur Dissolve Target Container -->
+        <div class="blur-dissolve-target">
+          <!-- DEFAULT PANE: GLUTE BASE GYM (Charcoal Theme, Electric Blue & Pink) -->
+          <div class="hero-card" data-brand-pane="glute">
+            <div class="brand-eyebrow">
+              <span>★ 5.0 Rated on Google Maps (92+ Reviews)</span>
+            </div>
+            <h1 class="hero-title">
+              SG Palya’s Premier <span class="accent-blue-text">Strength</span> &amp; <span class="accent-pink-text">Glute Hypertrophy</span> Training Hub
+            </h1>
+            <p class="hero-subtitle">
+              Biomechanically engineered lower-body machines, heavy free weights, and structured personal coaching by Founder &amp; Head Coach Dhana—right behind Gayatri Gents PG in Venkateshwara Layout.
+            </p>
+            <div class="hero-meta-badges">
+              <span class="meta-pill">📍 158, 4th Cross Rd, SG Palya</span>
+              <span class="meta-pill">⏰ Mon–Sat: 6:00 AM – 10:30 PM | Sun: 3:00 PM – 8:00 PM</span>
+              <span class="meta-pill">🏷️ [PLACEHOLDER: Glute Base Hero Promo Tag]</span>
+            </div>
+            <div class="hero-cta-group">
+              <a href="pricing.html" class="btn btn-neon-glute" id="hero-cta-memberships">Explore Gym Memberships →</a>
+              <a href="https://wa.me/918050184577?text=Hi%20Dhana%2C%20I%20want%20to%20inquire%20about%20Glute%20Base%20Gym%20memberships%20%5BPLACEHOLDER%3A%20Confirm%20WhatsApp%20Lead%20Number%5D" target="_blank" rel="noopener" class="btn btn-secondary-dark">Book Trial on WhatsApp</a>
+            </div>
+          </div>
+
+          <!-- TOGGLED PANE: FUEL BASE NUTRITION KITCHEN (Off-White Theme, Green + Blue/Pink) -->
+          <div class="hero-card" data-brand-pane="fuel" hidden>
+            <div class="brand-eyebrow">
+              <span>🥗 Clean Macro-Counted Meals • SG Palya</span>
+            </div>
+            <h1 class="hero-title">
+              <span class="accent-green-text">Fuel Base</span> Nutrition Kitchen: <span class="accent-blue-text">Eat Clean</span>, <span class="accent-pink-text">Fuel Right</span>, Live Strong
+            </h1>
+            <p class="hero-subtitle">
+              Freshly prepped high-protein bowls, post-workout recovery shakes, and zero-junk student meals crafted in-house to pair with your training at Glute Base.
+            </p>
+            <div class="hero-meta-badges">
+              <span class="meta-pill">📍 Ground Floor, 158, 4th Cross Rd, SG Palya</span>
+              <span class="meta-pill">⏰ Kitchen Hours: [PLACEHOLDER: Fuel Base Operating Hours]</span>
+              <span class="meta-pill">🏷️ [PLACEHOLDER: Fuel Base Hero Promo Tag]</span>
+            </div>
+            <div class="hero-cta-group">
+              <a href="menu.html" class="btn btn-neon-fuel" id="hero-cta-menu">View Full Cafe Menu →</a>
+              <a href="gallery.html" class="btn btn-secondary-light">See Kitchen &amp; Meal Photos</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         2. ANNOUNCEMENTS (NOTICE BOARD) WITH MOBILE ACCORDION
+         Desktop: Main Latest Notice (Left) + Previous Notices Stack (Right)
+         Mobile: Main Announcement + ONE previous notice visible; rest behind "View all"
+         ====================================================================== -->
+    <section class="section-block" id="announcements">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Official Notice Board</span>
+          <h2 class="section-title">Latest Announcements &amp; Updates</h2>
+          <p class="section-desc">Live offers, holiday schedules, and new equipment or menu drops for Glute Base &amp; Fuel Base.</p>
         </div>
 
+        <div class="notice-board-grid">
+          <!-- Main Ongoing Announcement (Left / Top) -->
+          <article class="main-notice-card">
+            <div class="notice-image-placeholder">
+              <span class="placeholder-badge">[PLACEHOLDER: Main Ongoing Announcement Banner Image]</span>
+              <p style="font-size: 0.8rem; color: var(--text-light-secondary); margin-top: 0.5rem;">
+                Upload latest promotional poster or event banner (16:9 / 4:3)
+              </p>
+            </div>
+            <div class="main-notice-body">
+              <div class="notice-status-row">
+                <span class="notice-live-tag">Featured Active Notice</span>
+                <span class="notice-date">[PLACEHOLDER: Main Announcement Date]</span>
+              </div>
+              <h3 class="main-notice-title">[PLACEHOLDER: Main Ongoing Announcement Headline — e.g. Student Transformation Offer / New Menu Launch]</h3>
+              <p class="main-notice-text">
+                [PLACEHOLDER: Main Ongoing Announcement Full Description Text — Details about current membership discount, new glute machine arrival, or Fuel Base meal prep subscription.]
+              </p>
+            </div>
+          </article>
+
+          <!-- Previous / Done Notices Column (Right / Bottom with Mobile Accordion) -->
+          <div class="prev-notices-column" id="prev-notices-list">
+            <!-- Previous Notice #1 (Visible by default on Mobile & Desktop) -->
+            <article class="prev-notice-card">
+              <div class="notice-status-row">
+                <span class="placeholder-badge">[PLACEHOLDER: Previous Notice #1 Tag]</span>
+                <span class="notice-date">[PLACEHOLDER: Previous Notice #1 Date]</span>
+              </div>
+              <h4 class="prev-notice-title">[PLACEHOLDER: Previous Notice #1 Title — Shown by Default on Mobile]</h4>
+              <p class="prev-notice-desc">[PLACEHOLDER: Previous Notice #1 Summary Text]</p>
+            </article>
+
+            <!-- Previous Notice #2 (Hidden behind "View all" toggle on Mobile) -->
+            <article class="prev-notice-card is-hidden-mobile">
+              <div class="notice-status-row">
+                <span class="placeholder-badge">[PLACEHOLDER: Previous Notice #2 Tag]</span>
+                <span class="notice-date">[PLACEHOLDER: Previous Notice #2 Date]</span>
+              </div>
+              <h4 class="prev-notice-title">[PLACEHOLDER: Previous Notice #2 Title — Hidden in Mobile Accordion]</h4>
+              <p class="prev-notice-desc">[PLACEHOLDER: Previous Notice #2 Summary Text]</p>
+            </article>
+
+            <!-- Previous Notice #3 (Hidden behind "View all" toggle on Mobile) -->
+            <article class="prev-notice-card is-hidden-mobile">
+              <div class="notice-status-row">
+                <span class="placeholder-badge">[PLACEHOLDER: Previous Notice #3 Tag]</span>
+                <span class="notice-date">[PLACEHOLDER: Previous Notice #3 Date]</span>
+              </div>
+              <h4 class="prev-notice-title">[PLACEHOLDER: Previous Notice #3 Title — Hidden in Mobile Accordion]</h4>
+              <p class="prev-notice-desc">[PLACEHOLDER: Previous Notice #3 Summary Text]</p>
+            </article>
+
+            <!-- Mobile "View all" Accordion Toggle Button -->
+            <button type="button" class="notice-accordion-btn" id="notice-accordion-toggle" aria-expanded="false">
+              <span data-toggle-label>View all previous notices (2 more) ↓</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         3. ENTRY PORTALS (2 LARGE NAVIGATION CARDS)
+         Routes to "Explore the Gym" (pricing.html) & "View Cafe Menu" (menu.html)
+         ====================================================================== -->
+    <section class="section-block" id="portals">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Dual-Brand Destination</span>
+          <h2 class="section-title">Choose Your Portal</h2>
+          <p class="section-desc">One roof in SG Palya for serious hypertrophy training and clean macro-friendly nutrition.</p>
+        </div>
+
+        <div class="portals-grid">
+          <!-- Portal 1: Glute Base Gym -> pricing.html -->
+          <div class="portal-card portal-glute">
+            <div>
+              <div class="portal-badge-row">
+                <span class="portal-pill-glute">Glute Base Gym</span>
+                <span style="font-size: 0.78rem; color: var(--accent-blue); font-weight: 700;">Strength &amp; Physique</span>
+              </div>
+              <h3 class="portal-title" style="margin-top: 0.85rem;">Train Hard with Biomechanical Precision</h3>
+              <p class="portal-desc">
+                Specialized glute bridges, hack squats, leg presses, competition dumbbells, and personal training plans tailored for students and working professionals.
+              </p>
+            </div>
+            <a href="pricing.html" class="btn btn-neon-glute" id="portal-explore-gym">Explore the Gym →</a>
+          </div>
+
+          <!-- Portal 2: Fuel Base Nutrition Kitchen -> menu.html -->
+          <div class="portal-card portal-fuel">
+            <div>
+              <div class="portal-badge-row">
+                <span class="portal-pill-fuel">Fuel Base Kitchen</span>
+                <span style="font-size: 0.78rem; color: var(--accent-pink-dark); font-weight: 700;">High-Protein Cafe</span>
+              </div>
+              <h3 class="portal-title" style="margin-top: 0.85rem;">Macro-Counted Bowls, Wraps &amp; Shakes</h3>
+              <p class="portal-desc">
+                Precision-weighed lean proteins, complex carbs, and zero-refined-sugar smoothies prepared fresh right downstairs at Glute Base.
+              </p>
+            </div>
+            <a href="menu.html" class="btn btn-neon-fuel" id="portal-view-menu">View Cafe Menu →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         4. ABOUT US: OWNER & HEAD COACH DHANA
+         ====================================================================== -->
+    <section class="section-block" id="about-dhana">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Leadership &amp; Coaching</span>
+          <h2 class="section-title">Meet Dhana — Owner &amp; Head Coach</h2>
+          <p class="section-desc">The vision behind Glute Base Gym &amp; Fuel Base Nutrition Kitchen in SG Palya.</p>
+        </div>
+
+        <div class="about-founder-grid">
+          <!-- Dhana Photo Placeholder -->
+          <div class="founder-photo-box">
+            <span class="placeholder-badge">[PLACEHOLDER: Owner / Head Coach Dhana Portrait Photo]</span>
+            <p style="font-size: 0.84rem; color: var(--text-light-secondary); max-width: 280px;">
+              Replace with high-resolution portrait of <strong>Dhana</strong> (Owner &amp; Head Coach, Fitwolf / Glute Base).
+            </p>
+            <span style="font-size: 0.75rem; color: var(--accent-blue); font-weight: 700;">
+              Specialist in Glute Development, Hypertrophy &amp; Fat Loss
+            </span>
+          </div>
+
+          <!-- Dhana Bio & Credentials -->
+          <div class="founder-content-card">
+            <h3 class="founder-name">Dhana</h3>
+            <div class="founder-role">Founder, Owner &amp; Head Transformation Coach • Glute Base &amp; Fuel Base</div>
+            <p class="founder-bio">
+              Known across SG Palya, Tavarekere, and Christ University Central Campus for delivering results-driven personal training without shortcuts. Dhana founded <strong>Glute Base Gym</strong> to bring dedicated lower-body biomechanics and judgment-free strength coaching to the neighborhood, paired with <strong>Fuel Base Nutrition Kitchen</strong> so members never fall short on daily protein and clean nutrition.
+            </p>
+            <p class="founder-bio" style="margin-bottom: 0;">
+              <span class="placeholder-badge">[PLACEHOLDER: Dhana Certifications, Competition History &amp; Personal Quote]</span>
+            </p>
+
+            <div class="founder-highlights">
+              <div class="highlight-stat">
+                <div class="stat-val">5.0 ★</div>
+                <div class="stat-lbl">92+ Verified Google Reviews</div>
+              </div>
+              <div class="highlight-stat">
+                <div class="stat-val">1-on-1</div>
+                <div class="stat-lbl">Structured PT &amp; Macro Plans</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         5. REVIEWS / SOCIAL PROOF
+         ====================================================================== -->
+    <section class="section-block" id="reviews">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Community Proof</span>
+          <h2 class="section-title">What SG Palya Lifters Say</h2>
+          <p class="section-desc">Rated 5.0 out of 5.0 across 92+ reviews on Google Maps in Venkateshwara Layout.</p>
+        </div>
+
+        <div class="reviews-summary-bar">
+          <div class="rating-score">
+            <span class="score-num">5.0</span>
+            <div>
+              <div class="stars-row" aria-label="5 out of 5 stars">★★★★★</div>
+              <div style="font-size: 0.78rem; color: var(--text-light-secondary);">92+ Google Maps Reviews • S.G. Palya, Bengaluru</div>
+            </div>
+          </div>
+          <a href="https://maps.google.com/?q=Glute+Base+Gym+and+Fitness+Centre+158+4th+Cross+Road+Venkateshwara+Layout+SG+Palya+Bengaluru" target="_blank" rel="noopener" class="btn btn-secondary-dark">Read on Google Maps ↗</a>
+        </div>
+
+        <div class="reviews-grid">
+          <article class="review-card">
+            <div class="stars-row" style="margin-bottom: 0.5rem;">★★★★★</div>
+            <p class="review-quote">
+              "One of the most happening fitness destinations in SG Palya, known for delivering the best personal training experience. Dedicated glute and lower-body equipment you won't find in regular local gyms."
+            </p>
+            <div class="reviewer-meta">
+              <span>Verified Gym Member</span>
+              <span style="color: var(--accent-blue);">Google Maps Review</span>
+            </div>
+          </article>
+
+          <article class="review-card">
+            <div class="stars-row" style="margin-bottom: 0.5rem;">★★★★★</div>
+            <p class="review-quote">
+              "Super clean setup right behind Gayatri Gents PG. Coach Dhana actually watches your form and pushes you with structured hypertrophy routines. Having Fuel Base right there makes post-workout meals effortless."
+            </p>
+            <div class="reviewer-meta">
+              <span>[PLACEHOLDER: Client Testimonial #2 Name]</span>
+              <span style="color: var(--accent-pink);">Transformation Client</span>
+            </div>
+          </article>
+        </div>
       </div>
     </section>
   </main>
 
-  <!-- Minimal Footer -->
+  <!-- GLOBAL FOOTER -->
   <footer class="site-footer">
-    <div class="footer-container">
-      <p class="footer-copy">&copy; <span id="current-year"></span> Glute Base Gym. All rights reserved.</p>
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-heading">Glute Base &times; Fuel Base</div>
+          <p style="margin-bottom: 0.75rem;">
+            158, Ground Floor, 4th Cross Road, Behind Gayatri Gents PG, Venkateshwara Layout, S.G. Palya, Bengaluru, Karnataka 560029.
+          </p>
+          <p>
+            <strong>Phone / WhatsApp:</strong> <a href="tel:+918050184577" style="color: var(--accent-blue);">+91 80501 84577</a> <span class="placeholder-badge">[PLACEHOLDER: Confirm Lead Number]</span>
+          </p>
+        </div>
+
+        <div>
+          <div class="footer-heading">Pages</div>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="menu.html">Fuel Base Cafe Menu</a></li>
+            <li><a href="gallery.html">Dual-Brand Gallery</a></li>
+            <li><a href="pricing.html">Gym Memberships &amp; PT</a></li>
+            <li><a href="contact.html">Location &amp; Operating Hours</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="footer-heading">Hours &amp; Socials</div>
+          <p style="margin-bottom: 0.4rem;"><strong>Gym (Mon–Sat):</strong> 6:00 AM – 10:30 PM</p>
+          <p style="margin-bottom: 0.4rem;"><strong>Gym (Sunday):</strong> 3:00 PM – 8:00 PM</p>
+          <p style="margin-bottom: 0.6rem;"><strong>Fuel Base Cafe:</strong> [PLACEHOLDER: Fuel Base Hours]</p>
+          <p><strong>Instagram:</strong> [PLACEHOLDER: @glutebasegym / @fuelbasekitchen Handles]</p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>&copy; 2026 Glute Base Gym &amp; Fuel Base Nutrition Kitchen (by Fitwolf). All rights reserved.</span>
+        <span>Informational Dual-Brand Portal • SG Palya, Bengaluru 560029</span>
+      </div>
     </div>
   </footer>
 
-  <!-- Persistent Floating WhatsApp Chat Widget (Bottom Right) -->
-  <aside class="whatsapp-widget-container" aria-label="Chat with Glute Base Gym on WhatsApp">
-    <a href="https://wa.me/?text=Hi%20Glute%20Base%20Gym%2C%20I%20have%20an%20inquiry." 
-       target="_blank" 
-       rel="noopener noreferrer" 
-       class="whatsapp-floating-btn" 
-       id="whatsappBtn"
-       title="Chat with Glute Base Gym on WhatsApp">
-      <span class="whatsapp-ping" aria-hidden="true"></span>
-      <span class="whatsapp-tooltip">Chat with us</span>
-      <!-- WhatsApp Clean SVG Icon -->
-      <svg class="whatsapp-icon" width="28" height="28" viewBox="0 0 24 24" fill="none">
-        <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12C2 13.818 2.484 15.526 3.328 17L2.053 21.657C1.986 21.902 2.057 22.163 2.239 22.338C2.383 22.476 2.576 22.553 2.775 22.553C2.864 22.553 2.955 22.537 3.042 22.505L7.886 20.738C9.176 21.419 10.551 21.785 12 21.785C17.523 21.785 22 17.308 22 11.785C22 6.262 17.523 2 12 2ZM8.674 7.643C8.423 7.037 8.163 7.025 7.923 7.015C7.726 7.006 7.502 7.007 7.279 7.007C7.056 7.007 6.693 7.091 6.386 7.426C6.079 7.761 5.213 8.571 5.213 10.219C5.213 11.867 6.414 13.459 6.581 13.682C6.749 13.906 8.924 17.433 12.333 18.775C15.166 19.89 15.742 19.667 16.356 19.611C16.971 19.555 18.339 18.801 18.618 18.019C18.898 17.237 18.898 16.567 18.814 16.427C18.73 16.287 18.507 16.204 18.172 16.036C17.837 15.868 16.19 15.058 15.883 14.946C15.576 14.835 15.353 14.779 15.129 15.114C14.906 15.449 14.264 16.204 14.068 16.427C13.873 16.651 13.678 16.679 13.343 16.511C13.008 16.343 11.928 15.989 10.648 14.848C9.65 13.959 8.975 12.859 8.78 12.524C8.585 12.189 8.759 12.008 8.927 11.841C9.078 11.691 9.263 11.448 9.431 11.252C9.598 11.057 9.654 10.917 9.766 10.694C9.878 10.47 9.822 10.275 9.738 10.107C9.654 9.94 9.012 8.375 8.674 7.643Z" fill="currentColor"/>
-      </svg>
-    </a>
-  </aside>
+  <!-- PERSISTENT FLOATING WHATSAPP WIDGET (BOTTOM RIGHT) -->
+  <a href="https://wa.me/918050184577?text=Hi%20Dhana%2C%20I%20visited%20the%20Glute%20Base%20%26%20Fuel%20Base%20website%20and%20would%20like%20to%20connect." target="_blank" rel="noopener" class="whatsapp-float" aria-label="Chat on WhatsApp with Glute Base and Fuel Base">
+    <span class="wa-icon-circle" aria-hidden="true">💬</span>
+    <span>WhatsApp Us</span>
+  </a>
 
-  <script src="script.js"></script>
+  <script src="main.js"></script>
 </body>
 </html>
