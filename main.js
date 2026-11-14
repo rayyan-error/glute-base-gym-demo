@@ -122,7 +122,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (labelSpan) {
         labelSpan.textContent = isExpanded
           ? 'Show fewer notices ↑'
-          : 'View all previous notices (2 more) ↓';
+          : 'View all notices (2 more) ↓';
       }
     });
   }
