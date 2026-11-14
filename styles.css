@@ -1350,6 +1350,34 @@ button {
   position: relative;
 }
 
+.masonry-visual.has-photo {
+  padding: 0;
+  overflow: hidden;
+  display: block;
+}
+
+.masonry-tall .masonry-visual.has-photo {
+  height: 245px;
+  min-height: 245px;
+}
+
+.masonry-short .masonry-visual.has-photo {
+  height: 185px;
+  min-height: 185px;
+}
+
+.masonry-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.35s ease;
+}
+
+.masonry-item:hover .masonry-photo {
+  transform: scale(1.03);
+}
+
 .theme-fuel .masonry-visual {
   background: linear-gradient(145deg, rgba(22, 199, 101, 0.14), rgba(0, 210, 255, 0.1));
 }
@@ -1701,6 +1729,16 @@ button {
   .gallery-masonry-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 1rem;
+  }
+
+  .masonry-tall .masonry-visual.has-photo {
+    height: 310px;
+    min-height: 310px;
+  }
+
+  .masonry-short .masonry-visual.has-photo {
+    height: 245px;
+    min-height: 245px;
   }
 }
 
