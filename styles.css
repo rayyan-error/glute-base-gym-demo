@@ -1606,6 +1606,36 @@ button {
   color: var(--text-light-primary);
 }
 
+.referral-promo-banner {
+  margin-top: 1.25rem;
+  background: linear-gradient(135deg, rgba(255, 42, 133, 0.14) 0%, rgba(0, 210, 255, 0.12) 100%);
+  border: 1.5px solid var(--accent-pink);
+  border-radius: var(--radius-lg);
+  padding: 0.95rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  text-align: center;
+  box-shadow: 0 8px 26px rgba(255, 42, 133, 0.12);
+}
+
+.referral-promo-copy {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.referral-reel-btn {
+  padding: 0.55rem 1.15rem;
+  min-height: 40px;
+  font-size: 0.85rem;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
 .pricing-stack {
   display: grid;
   grid-template-columns: 1fr;
@@ -2323,6 +2353,17 @@ button {
 
   .coach-story-card {
     padding: 2.15rem;
+  }
+
+  .referral-promo-banner {
+    flex-direction: row;
+    text-align: left;
+    padding: 1rem 1.5rem;
+  }
+
+  .referral-promo-copy {
+    flex-direction: row;
+    gap: 0.75rem;
   }
 }
 
