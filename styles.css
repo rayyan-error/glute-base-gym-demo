@@ -1972,8 +1972,65 @@ button {
 }
 
 /* ==========================================================================
-   14C. TRANSFORMATION STORIES (4 CLEAN MOBILE-OPTIMIZED PLACEHOLDER CARDS)
+   14C. TRANSFORMATION SHOWCASE & GALLERY MASONRY (HOMEPAGE & TRANSFORMATIONS.HTML)
    ========================================================================== */
+.featured-transformation-wrap {
+  max-width: 680px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.featured-transformation-card {
+  width: 100%;
+  background-color: var(--charcoal-surface);
+  border: 1.5px solid var(--accent-blue);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: 0 14px 36px rgba(0, 210, 255, 0.14);
+}
+
+.featured-transformation-media {
+  width: 100%;
+  background-color: var(--charcoal-elevated);
+}
+
+.featured-transformation-img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.featured-transformation-bar {
+  padding: 0.9rem 1.15rem;
+  border-top: 1px solid var(--charcoal-border);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.featured-transformation-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.28rem 0.78rem;
+  border-radius: var(--radius-pill);
+  background-color: rgba(255, 42, 133, 0.16);
+  border: 1px solid rgba(255, 42, 133, 0.45);
+  color: var(--accent-pink);
+  font-size: 0.78rem;
+  font-weight: 800;
+}
+
+.featured-transformation-meta {
+  font-size: 0.86rem;
+  font-weight: 700;
+  color: var(--text-light-primary);
+}
+
 .transformations-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1989,61 +2046,92 @@ button {
   flex-direction: column;
 }
 
-.transformation-placeholder-frame {
-  aspect-ratio: 4 / 5;
-  background: linear-gradient(145deg, rgba(0, 210, 255, 0.1), rgba(255, 42, 133, 0.12));
-  border-bottom: 1px dashed var(--charcoal-border-strong);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 0.85rem;
-  text-align: center;
-  gap: 0.5rem;
-}
-
-.transformation-icon-ring {
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  background-color: var(--charcoal-elevated);
-  border: 1px solid rgba(0, 210, 255, 0.35);
-  color: var(--accent-blue);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.transformation-placeholder-tag {
-  font-family: var(--font-mono);
-  font-size: 0.66rem;
-  font-weight: 700;
-  line-height: 1.35;
-  color: var(--accent-blue);
-  background-color: rgba(17, 19, 24, 0.65);
-  border: 1px dashed rgba(0, 210, 255, 0.45);
-  border-radius: var(--radius-sm);
-  padding: 0.3rem 0.45rem;
-  word-break: break-word;
+.transformation-photo-img {
+  width: 100%;
+  height: auto;
+  display: block;
 }
 
 .transformation-caption-box {
-  padding: 0.75rem;
+  padding: 0.65rem 0.75rem;
+  border-top: 1px solid var(--charcoal-border);
   display: flex;
   flex-direction: column;
-  gap: 0.2rem;
+  align-items: flex-start;
+  gap: 0.15rem;
 }
 
 .transformation-title {
-  font-size: 0.86rem;
+  font-size: 0.84rem;
   font-weight: 800;
   color: var(--text-light-primary);
 }
 
 .transformation-sub {
-  font-size: 0.75rem;
+  font-size: 0.74rem;
   color: var(--text-light-secondary);
   line-height: 1.4;
+}
+
+/* 2-Column Masonry Grid (transformations.html) */
+.transformations-masonry {
+  column-count: 2;
+  column-gap: 0.75rem;
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+.transformation-masonry-card {
+  break-inside: avoid;
+  -webkit-column-break-inside: avoid;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-bottom: 0.75rem;
+  background-color: var(--charcoal-surface);
+  border: 1px solid var(--charcoal-border-strong);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.transformation-masonry-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--accent-blue);
+}
+
+.transformation-masonry-card.is-hero-result {
+  border: 1.5px solid var(--accent-pink);
+  box-shadow: 0 10px 28px rgba(255, 42, 133, 0.15);
+}
+
+.transformation-masonry-img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.transformation-masonry-caption {
+  padding: 0.55rem 0.75rem;
+  border-top: 1px solid var(--charcoal-border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.35rem;
+  flex-wrap: wrap;
+}
+
+.transformation-metric {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--accent-blue);
+}
+
+.transformation-coach {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--accent-pink);
 }
 
 /* ==========================================================================
@@ -2332,6 +2420,14 @@ button {
     gap: 1rem;
   }
 
+  .transformations-masonry {
+    column-gap: 1.15rem;
+  }
+
+  .transformation-masonry-card {
+    margin-bottom: 1.15rem;
+  }
+
   .gallery-masonry-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 1rem;
@@ -2401,34 +2497,6 @@ button {
     display: inline-block;
   }
 
-  .hamburger-btn {
-    display: none;
-  }
-
-  .site-nav {
-    position: static;
-    display: flex !important;
-    flex-direction: row;
-    align-items: center;
-    background: transparent;
-    border: none;
-    padding: 0;
-    box-shadow: none;
-  }
-
-  .nav-list {
-    flex-direction: row;
-    align-items: center;
-    gap: 0.25rem;
-  }
-
-  .nav-link {
-    padding: 0.45rem 0.65rem;
-    font-size: 0.83rem;
-    white-space: nowrap;
-    background: transparent;
-  }
-
   .notice-board-grid {
     grid-template-columns: 1.15fr 0.85fr;
     align-items: start;
@@ -2462,5 +2530,35 @@ button {
 
   .footer-grid {
     grid-template-columns: 1.4fr 1fr 1fr;
+  }
+}
+
+@media (min-width: 1080px) {
+  .hamburger-btn {
+    display: none;
+  }
+
+  .site-nav {
+    position: static;
+    display: flex !important;
+    flex-direction: row;
+    align-items: center;
+    background: transparent;
+    border: none;
+    padding: 0;
+    box-shadow: none;
+  }
+
+  .nav-list {
+    flex-direction: row;
+    align-items: center;
+    gap: 0.15rem;
+  }
+
+  .nav-link {
+    padding: 0.42rem 0.56rem;
+    font-size: 0.8rem;
+    white-space: nowrap;
+    background: transparent;
   }
 }
