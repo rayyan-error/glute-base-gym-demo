@@ -1032,107 +1032,6 @@ button {
 }
 
 /* ==========================================================================
-   8. ENTRY PORTALS (2 LARGE NAVIGATION CARDS)
-   ========================================================================== */
-.portals-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 1.25rem;
-}
-
-.portal-card {
-  border-radius: var(--radius-lg);
-  padding: 1.75rem 1.35rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  gap: 1.25rem;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-}
-
-.portal-card:hover {
-  transform: translateY(-3px);
-}
-
-.portal-glute {
-  background-color: var(--charcoal-surface);
-  border: 1.5px solid var(--accent-blue);
-  box-shadow: 0 10px 30px rgba(0, 210, 255, 0.1);
-}
-
-.portal-fuel {
-  background-color: var(--offwhite-bg);
-  color: var(--text-dark-primary);
-  border: 1.5px solid var(--accent-green);
-  box-shadow: 0 10px 30px rgba(22, 199, 101, 0.14);
-}
-
-.portal-badge-row {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 0.5rem;
-}
-
-.portal-pill-glute {
-  font-size: 0.72rem;
-  font-weight: 800;
-  text-transform: uppercase;
-  padding: 0.25rem 0.65rem;
-  border-radius: var(--radius-pill);
-  background-color: var(--accent-pink-soft);
-  color: var(--accent-pink);
-}
-
-.portal-pill-fuel {
-  font-size: 0.72rem;
-  font-weight: 800;
-  text-transform: uppercase;
-  padding: 0.25rem 0.65rem;
-  border-radius: var(--radius-pill);
-  background-color: var(--accent-green-soft);
-  color: var(--accent-green-dark);
-}
-
-.portal-title {
-  font-size: 1.45rem;
-  font-weight: 800;
-  margin-bottom: 0.4rem;
-}
-
-.portal-desc {
-  font-size: 0.9rem;
-  color: var(--text-light-secondary);
-}
-
-.portal-fuel .portal-desc {
-  color: var(--text-dark-secondary);
-}
-
-.portal-chips {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.45rem;
-  margin-top: 0.85rem;
-}
-
-.portal-chip {
-  font-size: 0.74rem;
-  font-weight: 700;
-  padding: 0.28rem 0.65rem;
-  border-radius: var(--radius-pill);
-  background-color: var(--charcoal-elevated);
-  border: 1px solid var(--charcoal-border);
-  color: var(--text-light-secondary);
-}
-
-.portal-fuel .portal-chip {
-  background-color: var(--offwhite-surface);
-  border-color: var(--offwhite-border-strong);
-  color: var(--text-dark-secondary);
-}
-
-/* ==========================================================================
    9. ABOUT US: OWNER / HEAD COACH DHANA
    ========================================================================== */
 .about-founder-grid {
@@ -2382,7 +2281,6 @@ button {
     font-size: 1.15rem;
   }
 
-  .portals-grid,
   .reviews-grid,
   .amenities-grid,
   .hours-dual-grid {
