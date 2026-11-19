@@ -122,6 +122,7 @@
             <li><a href="pricing.html" class="nav-link">Memberships</a></li>
             <li><a href="transformations.html" class="nav-link">Transformations</a></li>
             <li><a href="dhana.html" class="nav-link">Coach Dhana</a></li>
+            <li><a href="guidelines.html" class="nav-link">Guidelines</a></li>
             <li><a href="contact.html" class="nav-link">Location &amp; Connect</a></li>
           </ul>
         </nav>
@@ -603,6 +604,7 @@
             <li><a href="pricing.html">Memberships</a></li>
             <li><a href="transformations.html">Transformations</a></li>
             <li><a href="dhana.html">Coach Dhana</a></li>
+            <li><a href="guidelines.html">Guidelines</a></li>
             <li><a href="contact.html">Location &amp; Hours</a></li>
           </ul>
         </div>
@@ -621,6 +623,119 @@
       </div>
     </div>
   </footer>
+
+  <!-- MEMBER NOTICE / GUIDELINES MODAL POPUP -->
+  <div class="modal-backdrop" id="member-notice-modal" role="dialog" aria-modal="true" aria-labelledby="notice-modal-title" aria-hidden="true">
+    <div class="notice-modal-card">
+      <button type="button" class="notice-modal-close" id="notice-modal-close-btn" aria-label="Close Member Notice modal">&times;</button>
+
+      <div class="notice-modal-header">
+        <div class="notice-warning-mark" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0Z"/>
+            <line x1="12" y1="9" x2="12" y2="13"/>
+            <line x1="12" y1="17" x2="12.01" y2="17"/>
+          </svg>
+        </div>
+        <h2 class="notice-modal-title" id="notice-modal-title">IMPORTANT NOTICE</h2>
+        <div class="notice-member-pill">All GluteBase Members</div>
+        <p class="notice-lead-note">This is a strict warning to all members. Please read carefully.</p>
+      </div>
+
+      <div class="notice-statement-banner">
+        GluteBase equipment is expensive and must be handled responsibly.
+      </div>
+
+      <div class="notice-rules-compact">
+        <div class="notice-rule-row">
+          <div class="notice-rule-icon" aria-hidden="true">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M6.5 6.5v11"/>
+              <path d="M17.5 6.5v11"/>
+              <path d="M3.5 9v6"/>
+              <path d="M20.5 9v6"/>
+              <path d="M6.5 12h11"/>
+            </svg>
+          </div>
+          <div>
+            <div class="notice-rule-heading">1. Dumbbells &amp; Weights:</div>
+            <p class="notice-rule-desc">Do not throw, slam or carelessly drop weights. Always return them to their designated places.</p>
+          </div>
+        </div>
+
+        <div class="notice-rule-row">
+          <div class="notice-rule-icon" aria-hidden="true">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="6" y="4" width="12" height="14" rx="2"/>
+              <path d="M4 20h16"/>
+              <path d="M10 9h4"/>
+              <path d="M10 13h4"/>
+            </svg>
+          </div>
+          <div>
+            <div class="notice-rule-heading">2. Machines:</div>
+            <p class="notice-rule-desc">Control the weights while lifting and lowering. Do not bang or misuse equipment.</p>
+          </div>
+        </div>
+
+        <div class="notice-rule-row">
+          <div class="notice-rule-icon" aria-hidden="true">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3 12h18"/>
+              <path d="M5 12v6"/>
+              <path d="M19 12v6"/>
+              <path d="M4 10h16"/>
+            </svg>
+          </div>
+          <div>
+            <div class="notice-rule-heading">3. Gym Property:</div>
+            <p class="notice-rule-desc">Damaging benches, breaking equipment, misplacing or stealing even small accessories will NOT be tolerated.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="notice-strict-box">
+        <span class="notice-strict-heading">Strict Action Will Be Taken:</span>
+        <ul class="notice-strict-list">
+          <li><span class="notice-bullet-dot">•</span><span>Equipment damage and missing items are monitored and recorded.</span></li>
+          <li><span class="notice-bullet-dot">•</span><span>Anyone responsible will have to bear the repair or replacement cost.</span></li>
+          <li><span class="notice-bullet-dot">•</span><span>Serious or repeated violations will result in immediate membership cancellation without a refund.</span></li>
+        </ul>
+      </div>
+
+      <div class="notice-pledge-banner">
+        <div class="notice-pledge-main">Lift heavy, but handle equipment responsibly.</div>
+        <div class="notice-pledge-sub">
+          We have 300+ members. Respect the space, the equipment &amp; fellow members. — <strong>Team GluteBase</strong>
+        </div>
+      </div>
+
+      <div class="notice-modal-actions">
+        <a href="guidelines.html" class="btn btn-neon-glute" id="notice-modal-guidelines-link">View Full Guidelines Page →</a>
+        <button type="button" class="btn btn-secondary-dark" id="notice-modal-dismiss-btn">Understood &amp; Close</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- FLOATING MEMBER NOTICE BUTTON (BOTTOM LEFT) -->
+  <button
+    type="button"
+    class="notice-float"
+    id="notice-float-btn"
+    data-notice-modal-open
+    aria-haspopup="dialog"
+    aria-controls="member-notice-modal"
+    aria-label="Open Important Member Notice and Gym Guidelines"
+  >
+    <span class="notice-icon-circle" aria-hidden="true">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0Z"/>
+        <line x1="12" y1="9" x2="12" y2="13"/>
+        <line x1="12" y1="17" x2="12.01" y2="17"/>
+      </svg>
+    </span>
+    <span>Gym Notice</span>
+  </button>
 
   <!-- PERSISTENT FLOATING WHATSAPP WIDGET -->
   <a href="https://wa.me/918050184577?text=Hi%20Dhana%2C%20I%20visited%20Glute%20Base%20online%20and%20want%20to%20connect." target="_blank" rel="noopener" class="whatsapp-float" aria-label="Chat on WhatsApp with Glute Base">

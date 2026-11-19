@@ -205,4 +205,59 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   }
+
+  /* --------------------------------------------------------------------------
+     6. MEMBER NOTICE / GUIDELINES FLOATING MODAL (index.html)
+     -------------------------------------------------------------------------- */
+  const noticeTriggers = document.querySelectorAll('[data-notice-modal-open]');
+  const noticeModal = document.getElementById('member-notice-modal');
+  const noticeCloseBtn = document.getElementById('notice-modal-close-btn');
+  const noticeDismissBtn = document.getElementById('notice-modal-dismiss-btn');
+
+  if (noticeModal && noticeTriggers.length > 0) {
+    let lastFocusedTrigger = null;
+
+    const openNoticeModal = (trigger) => {
+      lastFocusedTrigger = trigger || document.activeElement;
+      noticeModal.classList.add('is-open');
+      noticeModal.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+      if (noticeCloseBtn) {
+        noticeCloseBtn.focus();
+      }
+    };
+
+    const closeNoticeModal = () => {
+      noticeModal.classList.remove('is-open');
+      noticeModal.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+      if (lastFocusedTrigger && typeof lastFocusedTrigger.focus === 'function') {
+        lastFocusedTrigger.focus();
+      }
+    };
+
+    noticeTriggers.forEach((btn) => {
+      btn.addEventListener('click', () => openNoticeModal(btn));
+    });
+
+    if (noticeCloseBtn) {
+      noticeCloseBtn.addEventListener('click', closeNoticeModal);
+    }
+
+    if (noticeDismissBtn) {
+      noticeDismissBtn.addEventListener('click', closeNoticeModal);
+    }
+
+    noticeModal.addEventListener('click', (e) => {
+      if (e.target === noticeModal) {
+        closeNoticeModal();
+      }
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && noticeModal.classList.contains('is-open')) {
+        closeNoticeModal();
+      }
+    });
+  }
 });
